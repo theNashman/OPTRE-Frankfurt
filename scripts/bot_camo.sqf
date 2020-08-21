@@ -11,10 +11,11 @@ if (!(_player getVariable "camoActive")) then {
 		{
 			{
 				if !(isPlayer _x) then { 
-					_x setUnitTrait ["camouflageCoef", 0.5];
+					_x setUnitTrait ["camouflageCoef", 0.35];
 					_x setUnitTrait ["audibleCoef", 0.5];
 					_x groupChat "Camo ON";
 					_this select 0 setVariable ["teamCamoActive", true];
+					//_this select 0 hideObject true;
 					sleep 0.3;
 				};
 			} forEach units group (_this select 0);
@@ -28,6 +29,7 @@ if (!(_player getVariable "camoActive")) then {
 					_x setUnitTrait ["audibleCoef", 1.0];
 					_x groupChat "Camo Depleted. Recharging ...";
 					_x setVariable ["teamCamoActive", false];
+					//_this select 0 hideObject false;
 					sleep 0.3;
 				};	
 			} forEach units group (_this select 0);	
