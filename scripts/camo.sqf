@@ -28,8 +28,8 @@ if (!(_unit getVariable "camoActive")) then {
 			[_this select 0] execVM "scripts\camo.sqf";
 		},
 		nil,
-		1.5,
-		true,
+		3,
+		false,
 		true,
 		"",
 		"player == leader group _this;",

@@ -38,8 +38,8 @@ if (!(_player getVariable "camoActive")) then {
 			[_this select 0] execVM "scripts\bot_camo.sqf";	
 		},
 		nil,
-		1.5,
-		true,
+		2,
+		false,
 		true,
 		"",
 		"",
