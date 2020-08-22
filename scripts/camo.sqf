@@ -28,7 +28,6 @@ if (!(_unit getVariable "camoActive")) then {
 			{
 				if (side _x == east) then {
 					_x forgetTarget _target;
-					systemChat "drake has forgotten";
 				};
 			} forEach allUnits;
 			systemChat "done";

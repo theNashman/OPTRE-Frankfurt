@@ -1,17 +1,22 @@
 params ["_player"];
 
-//Only executes for non-human team members
+//Only executes for non-human team members as AI won't be able to use it anyway.
+//Below line will never execute because of checks in init.sqf
+if !(isPlayer _player) exitWith {systemChat "Team Leader is not human."};
+
+
 _player setVariable ["teamCamoActive", false];
 
 if (!(_player getVariable "teamCamoActive")) then {
 	_player groupChat "TEAM Camo Ready";
-	teeamCamoActionID = _player addAction 
+	teamCamoActionID = _player addAction 
 	[
 		"TEAM CAMO ON", 
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
 
 			{
+				//Only bots will have their camo turned on
 				if !(isPlayer _x) then { 
 					_x setUnitTrait ["camouflageCoef", 0.35];
 					_x setUnitTrait ["audibleCoef", 0.5];
@@ -25,7 +30,6 @@ if (!(_player getVariable "teamCamoActive")) then {
 					{
 						if ((side _x) == east) then {
 							_x forgetTarget _x0;
-							systemChat "drake has forgotten mason";
 						}
 					} forEach allUnits;
 				};
