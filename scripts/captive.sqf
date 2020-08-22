@@ -2,9 +2,10 @@ params ["_captive"];
 
 
 
-//removeAllWeapons _captive;
+
 
 [_captive] call ONI_fnc_throwWeapon;
+removeAllWeapons _captive;					//Remove binoculars
 player action ["Surrender", _captive];
 _captive setBehaviour "CARELESS";
 
