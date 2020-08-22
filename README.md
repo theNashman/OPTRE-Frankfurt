@@ -2,7 +2,10 @@
 Arma 3 Operation Trebuchet mission
 
 This is a quick mission for the Operation Trebuchet mod for Arma 3.
+It focuses on stealth and speed.
+
 Mode: Singleplayer (MP support on the way)
+Mission Length: 30 - 45 minutes
 Required Addons:  
 
     1. CBA
