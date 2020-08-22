@@ -24,4 +24,3 @@ I'm thinking something along the lines of Republic Commando, with unique teammat
 personalities and trais to help you with your mission.
 
 It's a big project and I understand the limitations of Arma 3's engine so that would be on hold till I've figured this out.
-
