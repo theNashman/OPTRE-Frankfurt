@@ -1,10 +1,33 @@
-//if (isPlayer (leader group player)) then {[leader group player] execVM "scripts\bot_camo.sqf"};
+missionNamespace setVariable ["capturedVIP", false, true];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//This bit goes at the bottom NO EXCEPTIONS
+waitUntil {alive player};
+
 if (player == leader group player) then {
 	[player] execVM "scripts\bot_camo.sqf";
+	[player] execVM "scripts\camo.sqf";
+} else {
+	[player] execVM "scripts\camo.sqf";
 };
-
-//} else {
-	//[player] execVM "scripts\camo.sqf";
-//};
-
-missionNamespace setVariable ["capturedVIP", false, true];

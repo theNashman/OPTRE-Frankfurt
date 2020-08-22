@@ -3,7 +3,7 @@ params ["_player"];
 //Only executes for non-human team members
 _player setVariable ["teamCamoActive", false];
 
-if (!(_player getVariable "camoActive")) then {
+if (!(_player getVariable "teamCamoActive")) then {
 	_player groupChat "TEAM Camo Ready";
 	teeamCamoActionID = _player addAction 
 	[
