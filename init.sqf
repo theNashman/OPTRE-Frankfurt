@@ -6,3 +6,5 @@ if (player == leader group player) then {
 //} else {
 	//[player] execVM "scripts\camo.sqf";
 //};
+
+missionNamespace setVariable ["capturedVIP", false, true];

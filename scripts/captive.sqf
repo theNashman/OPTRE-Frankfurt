@@ -1,7 +1,9 @@
 params ["_captive"];
 
-_captive setCaptive true;
+
+
 removeAllWeapons _captive;
+player action ["Surrender", _captive];
 _captive setBehaviour "CARELESS";
 
 _captive addAction
@@ -9,8 +11,10 @@ _captive addAction
 	"--CAPTURE--",	// title
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"]; // script
-		_caller action ["Surrender", _target];
 		[_target] join _caller;
+		_target switchMove "";
+		missionNamespace setVariable ["capturedVIP", true, true];
+		_target removeAction _actionId;
 	},
 	nil,		// arguments
 	6,			// priority
