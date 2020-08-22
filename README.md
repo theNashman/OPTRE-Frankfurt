@@ -5,7 +5,8 @@ This is a quick mission for the Operation Trebuchet mod for Arma 3.
 It focuses on stealth and speed.
 
 Mode: Singleplayer (MP support on the way)
-Mission Length: 30 - 45 minutes
+Mission Length: 30 - 45 minutes.
+
 Required Addons:  
 
     1. CBA
@@ -27,6 +28,7 @@ Some notable features:
     2. TBD
 
 I intend to make this mission part of a larger campaign in the future if it proves successful and enjoyable.
+
 I'm thinking something along the lines of Republic Commando, with unique teammates that possess different skills,
 personalities and trais to help you with your mission.
 
