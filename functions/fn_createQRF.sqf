@@ -18,7 +18,7 @@ _sideArray = [east, west, resistance, civilian];
 
 
 _i = getNumber (configFile >> "CfgVehicles" >> _qrfTeam select 0  >> "side");
-if (_i < 4) then {_qrfSide = _sideArray select _i;} else {_qrfSide = east};
+_qrfSide = if (_i < 4) then {_sideArray select _i;} else {east};
 
 
 _relPosArray = [];
@@ -28,9 +28,9 @@ if (count _qrfTeam > 1) then {
 
 	for "_i" from 0 to (count _qrfTeam - 1) do {
 		if !(_i == 0) then {
-			_posX = (_relPosArray select (_i - 1) select 0) + 5
+			//_posX = (_relPosArray select (_i - 1) select 0) + 5
+			_posX = _i * 5;
 		};
-		systemChat format ["_posX shallow is: %1", _posX];
 		
 		//_posX = random [-15, 5, 15];
 		//_posY = random [-15, -5, 15];
@@ -39,11 +39,22 @@ if (count _qrfTeam > 1) then {
 	};
 };
 
-//systemChat format ["Position array is: %1", _relPosArray];
 _qrfGroup = [_position, _qrfSide, _qrfTeam, _relPosArray] call BIS_fnc_spawnGroup;
-_qrfGroup deleteGroupWhenEmpty true;
 
+[_qrfGroup] spawn {
+	params ["_qrfGroup"];
+	waitUntil {unitReady leader _qrfGroup};
+};
+//waitUntil {unitReady leader _qrfGroup};
 _qrfGroup addWaypoint [_destination, 0] setWaypointType "SAD";
+
+//_qrfGroup deleteGroupWhenEmpty true;
+
+
+
+
+
+
 
 
 
@@ -51,9 +62,11 @@ _qrfGroup addWaypoint [_destination, 0] setWaypointType "SAD";
 
 /* Debug Only
 
-systemChat format ["QRF spawned at: %1.", _position];
-systemChat format ["QRF contains: %1.", _qrfTeam select 0];
-systemChat format ["QRF headed to: %1.", _destination];
+systemChat str [_qrfGroup];
+systemChat format ["Group count is: %1", count units _qrfGroup];
+systemChat str [_position, _qrfSide, _qrfTeam, _relPosArray];
+systemChat str [waypoints _qrfGroup];
+groupEnemy = [getMarkerPos "qrf_spawn", east, 5] call BIS_fnc_spawnGroup;
 
 */
 
