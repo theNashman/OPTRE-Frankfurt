@@ -8,7 +8,8 @@
 		_qrfTeam : Array containing class names of QRF team
 		_pos : spawn position of QRF team
 		_dest : location of SAD waypoint
-		E.g : [["O_MRAP_02_hmg_F", "O_MRAP_02_hmg_F"], getMarkerPos "qrf_spawn", position player] call ONI_fnc_createQRF
+		E.g : [["O_MRAP_02_hmg_F", "O_MRAP_02_hmg_F"], getMarkerPos "qrf_large", position player] call ONI_fnc_createQRF
+	NOTE: Function returns the spawned group
 */
 
 if ((count _this) < 3) exitWith {debugLog "Log: [createQRF] Function requires at leat 3 parameters!"};
@@ -59,7 +60,6 @@ _qrfGroup addWaypoint [_destination, 0] setWaypointType "SAD";
 
 
 
-
 /* Debug Only
 
 systemChat str [_qrfGroup];
@@ -70,3 +70,4 @@ groupEnemy = [getMarkerPos "qrf_spawn", east, 5] call BIS_fnc_spawnGroup;
 
 */
 
+_qrfGroup;

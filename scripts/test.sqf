@@ -23,9 +23,15 @@ if (alive _helicopter) then
        _helicopter land "LAND";
 };
 
+_time = time;
+waitUntil {time == _time + 10};
+systemChat "Large QRF on the way"
 
+_bigQRF = [["OPTRE_M12_LRV_ins", "OPTRE_m1015_mule_ins"], getMarkerPos "qrf_large", position player] call ONI_fnc_createQRF;
 
-
+_smallQRF = [getMarkerPos "qrf_large", east, (configfile >> "CfgGroups" >> "East" >> "OPTRE_Ins" >> "Infantry_URF" >> "OPTRE_Ins_URF_Inf_RifleSquad")] call BIS_fnc_spawnGroup;
+units _smallQRF join _bigQRF;
+_bigQRF addWaypoint [position player, 0] setWaypointType "SAD";
 
 
 
