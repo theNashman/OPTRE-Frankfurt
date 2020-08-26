@@ -34,9 +34,17 @@ units _smallQRF join _bigQRF;
 _bigQRF addWaypoint [position player, 0] setWaypointType "SAD";
 
 
+(keystone knowsAbout player) > 0.6 && ({alive _x && side _x == EAST} count allUnits in thisList) < 2;
 
 
+_guards = [];
+_all = allUnits inAreaArray trg_surrender;
+{
+	if (alive _x and side _x == EAST) then {
+		_guards pushBack _x;
+		};
+} forEach _all;
 
+count _guards;
 
-
-
+[group this, getMarkerPos "vip_marker", 50] call BIS_fnc_taskPatrol;
