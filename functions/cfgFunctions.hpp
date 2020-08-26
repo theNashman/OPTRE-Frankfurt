@@ -6,5 +6,6 @@ class ONI
 		class landHelo;
 		class throwWeapon;
 		class createQRF;
+		class stayStill;
 	};
 };
