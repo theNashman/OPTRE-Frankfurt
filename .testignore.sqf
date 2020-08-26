@@ -46,5 +46,3 @@ _all = allUnits inAreaArray trg_surrender;
 } forEach _all;
 
 count _guards;
-
-[group this, getMarkerPos "vip_marker", 50] call BIS_fnc_taskPatrol;
