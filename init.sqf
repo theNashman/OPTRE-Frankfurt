@@ -30,6 +30,7 @@ missionNamespace setVariable ["capturedVIP", false, true];
 
 
 
+
 //This bit goes at the bottom NO EXCEPTIONS
 waitUntil {alive player};
 
