@@ -7,5 +7,6 @@ class ONI
 		class throwWeapon;
 		class createQRF;
 		class stayStill;
+		class activeCamo;
 	};
 };
