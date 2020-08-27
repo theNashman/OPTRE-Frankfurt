@@ -48,7 +48,7 @@ isUnitFnc = {
 
 
 isGroupFnc = {
-	params ["_group", ["_combatBOOL", true], ["_debug", true]];
+	params ["_group", ["_combatBOOL", true], ["_debug", false]];
 
 	{
 		_x disableAI "ANIM";
@@ -60,7 +60,7 @@ isGroupFnc = {
 
 	//If any member in group goes into combat they all will be 'reawakened'
 	if (_combatBOOL) then {
-		if (_debug) then {systemChat "AI will awaken if aggroed"};
+		if (_debug) then {systemChat "AI will awaken if in danger"};
 
 		[_group, _debug] spawn {
 			params ["_group", "_debug"];
