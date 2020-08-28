@@ -7,7 +7,7 @@ params ["_unit"];
 
 
 if !(isPlayer _unit) exitWith {};
-_unit setVariable ["camoActive", false];
+_unit setVariable ["camoActive", false, true];
 
 camoActionID = _unit addAction 
 [
