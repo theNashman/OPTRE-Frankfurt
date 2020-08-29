@@ -7,7 +7,7 @@ params ["_unit"];
 
 
 if !(isPlayer _unit) exitWith {};
-_unit setVariable ["camoActive", false, true];
+_unit setVariable ["camoCharged", false, true];
 
 camoActionID = _unit addAction 
 [
@@ -15,21 +15,20 @@ camoActionID = _unit addAction
 	{
 		
 		params ["_target", "_caller", "_actionId", "_arguments"];
-		player removeAction (_actionId);
+		
+		_target setVariable ["camoCharged", true];
 
-		[_target] spawn ONI_fnc_activeCamo;
+		[_target] call ONI_fnc_activeCamo;
 
-		[_target] execVM "scripts\camo.sqf";
 	},
 	nil,
 	3,
 	false,
 	true,
 	"",
-	"",
+	'!(_target getVariable "camoCharged")',
 	-1
 ];
-
 
 
 
