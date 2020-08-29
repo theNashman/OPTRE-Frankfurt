@@ -50,7 +50,7 @@ _unit setUnitTrait ["audibleCoef", _audioCoef];
 
 
 _unit groupChat "Active Camo ON";
-_unit setVariable ["camoCharged", true];
+_unit setVariable ["camoCharged", false];
 sleep _cooldown;
 
 
@@ -59,6 +59,6 @@ _unit setUnitTrait ["camouflageCoef", 1.0];
 _unit setUnitTrait ["audibleCoef", 1.0];
 _unit groupChat "Active Camo Depleted. Recharging ...";	
 sleep _recharge;
-_unit setVariable ["camoCharged", false];
+_unit setVariable ["camoCharged", true];
 
 _unit groupChat "Active Camo READY";
