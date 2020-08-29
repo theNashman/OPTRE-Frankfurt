@@ -16,7 +16,7 @@ missionNamespace setVariable ["capturedVIP", false, true];
 
 //Make units stay still. Executed on marked non-patroling units
 //I prefer this to using init fields because of Multiplayer
-_beStillARRAY = [baddie_1, baddie_2, baddie_3, baddie_4, baddie_5, baddie_6];
+_beStillARRAY = [baddie_1, baddie_2, baddie_3, baddie_4, baddie_5, baddie_6, baddie_7];
 {
 	[group _x] call ONI_fnc_stayStill;
 
