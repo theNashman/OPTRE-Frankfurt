@@ -1,6 +1,6 @@
 
 
-_heliArray = [markerPos "helispawn", direction player, "OPTRE_Pelican_armed", west] call BIS_fnc_spawnVehicle;
+_heliArray = [markerPos "helispawn", direction player, "OPTRE_UNSC_falcon_unarmed", west] call BIS_fnc_spawnVehicle;
 _heliArray params ["_heliArrayVeh", "_heliArrayCrew", "_heliArrayGrp"];
 heli1 = _heliArrayVeh;
 publicVariable "heli1";

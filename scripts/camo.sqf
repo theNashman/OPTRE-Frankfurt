@@ -24,7 +24,7 @@ camoActionID = _unit addAction
 	false,
 	true,
 	"",
-	'(_target getVariable "camoCharged")',
+	'(_target getVariable "camoCharged") && (_this == _target)',
 	-1
 ];
 
