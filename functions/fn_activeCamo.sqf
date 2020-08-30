@@ -28,9 +28,9 @@ if !(isServer) exitWith {};
 params ["_unit", ["_debug", false]];
 
 _camoCoef = 0.35;	//How effective is camo, smaller is better
-_audioCoef = 0.45;
-_cooldown = 2;		//How long camo will last in seconds
-_recharge = 4;		//How long does camo take to recharge. Set to '0' for no recharge
+_audioCoef = 0.25;
+_cooldown = 45;		//How long camo will last in seconds
+_recharge = 45;		//How long does camo take to recharge. Set to '0' for no recharge
 
 
 
@@ -55,8 +55,8 @@ sleep _cooldown;
 
 
 //Camo depleted
-_unit setUnitTrait ["camouflageCoef", 1.0];
-_unit setUnitTrait ["audibleCoef", 1.0];
+_unit setUnitTrait ["camouflageCoef", 0.75];
+_unit setUnitTrait ["audibleCoef", 0.55];
 _unit groupChat "Active Camo Depleted. Recharging ...";	
 sleep _recharge;
 _unit setVariable ["camoCharged", true];
