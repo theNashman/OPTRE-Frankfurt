@@ -18,9 +18,9 @@ Reccomended:
 
 Your objectives are three:
 
-    1. Destroy a URF ammo cache
-    2. Collect vital intel on the location of one of their leaders.
-    3. Extradite a VIP and Extract safely.
+    1. Destroy a URF ammo cache.
+    2. Collect vital intel.
+    3. Capture a VIP and Extract safely.
 
 Some notable features:
 
