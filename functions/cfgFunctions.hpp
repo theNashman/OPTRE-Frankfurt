@@ -8,5 +8,6 @@ class ONI
 		class createQRF;
 		class stayStill;
 		class activeCamo;
+		class militiaSkills;
 	};
 };
