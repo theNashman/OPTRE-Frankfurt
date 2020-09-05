@@ -19,7 +19,7 @@
 
 */
 
-params ["_unit", ["_debug", true]];
+params ["_unit", ["_debug", false]];
 
 
 
@@ -42,7 +42,7 @@ _skillArray = [
 //The effectively makes AI dumb
 
 isUnitFnc = {
-	params ["_unit", "_skillArray", ["_debug", true]];
+	params ["_unit", "_skillArray", ["_debug", false]];
 
 	//Don't execute if safeword present
 	if (_unit getVariable ["ONI_Skilled", false]) exitWith {};
@@ -77,7 +77,7 @@ isUnitFnc = {
 isGroupFnc = {
 	
 
-	params ["_unit", "_skillArray", ["_debug", true]];
+	params ["_unit", "_skillArray", ["_debug", false]];
 	_group = _unit;
 
 
@@ -111,8 +111,8 @@ isGroupFnc = {
 
 //Parameter check for unit or group
 switch (typeName _unit) do {
-	case "OBJECT": {[_unit, _skillArray] call isUnitFnc};
-	case "GROUP": {[_unit, _skillArray] call isGroupFnc};
+	case "OBJECT": {[_unit, _skillArray, _debug] call isUnitFnc};
+	case "GROUP": {[_unit, _skillArray, _debug] call isGroupFnc};
 	default {
 		//throw ("argument must be group or unit");
 		if(_debug) exitWith {systemChat "EXCEPTION: fnc_militiaSkills expects UNIT or GROUP"};
