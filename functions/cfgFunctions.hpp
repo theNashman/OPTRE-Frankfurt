@@ -9,6 +9,6 @@ class ONI
 		class stayStill;
 		class activeCamo;
 		class militiaSkills;
-		class ambientAI;
+		//class ambientAI;
 	};
 };
