@@ -19,8 +19,6 @@ systemChat "working";
 [_unit, _animation] call BIS_fnc_ambientAnim;
 
 
-
-
 if (typeName _trigger == "BOOL") then {
 	waitUntil {behaviour _unit == "combat"};
 	_unit call BIS_fnc_ambientAnim__terminate;
